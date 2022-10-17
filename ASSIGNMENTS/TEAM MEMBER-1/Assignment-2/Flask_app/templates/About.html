@@ -1,0 +1,26 @@
+<html>
+<title>About page</title>
+
+<body style="text-align:center">
+
+    <h2>Total users</h2>
+    
+{% with messages=get_flashed_messages() %}  
+
+{% if messages  %}
+ 
+   {% for message in messages %}
+   <div style="margin-left: 400px;background-color: rgb(18, 18, 71);color:white;height:30px;width:500px;">
+      <p >{{message}}</p>
+   </div>
+   <br>
+
+{% endfor %}
+{% endif %}
+{% endwith %}
+    
+    <h1>About page</h1>
+
+</body>
+
+</html>
