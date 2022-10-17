@@ -1,0 +1,27 @@
+<html>
+
+<title>welcome page</title>
+
+<body>
+
+
+    {% with messages=get_flashed_messages() %}  
+
+    {% if messages  %}
+     
+       {% for message in messages %}
+       <div style="margin-left: 400px;background-color: rgb(18, 18, 71);color:white;height:30px;width:500px;">
+          <p >{{message}}</p>
+       </div>
+       <br>
+    
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
+
+    <h1>WELCOME {{name}}</h1>
+  <h1>You Successfully logined</h1>
+</body>
+
+</html>

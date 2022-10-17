@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+   
+{% with messages=get_flashed_messages() %}  
+
+{% if messages  %}
+ 
+   {% for message in messages %}
+   <div style="margin-left: 400px;background-color: rgb(18, 18, 71);color:white;height:30px;width:500px;">
+      <p >{{message}}</p>
+   </div>
+   <br>
+
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="container" style="background-color: rgb(187, 211, 229);">
+  <h2 style="color:rgb(9, 6, 48)">Signup page</h2>
+  <form method="POST" action="{{url_for('signup')}}">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input name="email" type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" name="pass" class="form-control" id="pwd" placeholder="Enter password">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+
+</body> 
+</html>
